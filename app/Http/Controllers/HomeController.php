@@ -27,9 +27,13 @@ class HomeController extends Controller
     /**
      * Show career page
      */
-    public function career()
+     public function career()
     {
-        return view('career');
+        $vacancies = \App\Models\JobVacancy::active()
+            ->orderBy('created_at', 'desc')
+            ->get();
+ 
+        return view('career', compact('vacancies'));
     }
 
     /**

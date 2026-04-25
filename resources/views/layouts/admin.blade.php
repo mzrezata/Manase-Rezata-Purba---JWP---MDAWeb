@@ -161,6 +161,12 @@
                             <i class="fas fa-globe"></i> Halaman Utama
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('admin.job_vacancies.*') ? 'active' : '' }}"
+                        href="{{ route('admin.job_vacancies.index') }}">
+                        <i class="fas fa-clipboard-list"></i> Lowongan
+                        </a>
+                    </li>
                 </div>
             </nav>
 

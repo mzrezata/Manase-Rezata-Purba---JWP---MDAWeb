@@ -66,4 +66,13 @@ Route::prefix('admin')->middleware(['auth', 'role:admin,hr,superadmin'])->group(
         Route::put('/{user}', 'App\Http\Controllers\Admin\UserController@update')->name('admin.users.update');
         Route::delete('/{user}', 'App\Http\Controllers\Admin\UserController@destroy')->name('admin.users.destroy');
     });
+    // job vacancies
+    Route::prefix('job-vacancies')->group(function () {
+        Route::get('/',                  'App\Http\Controllers\Admin\JobVacancyController@index')->name('admin.job_vacancies.index');
+        Route::get('/create',            'App\Http\Controllers\Admin\JobVacancyController@create')->name('admin.job_vacancies.create');
+        Route::post('/',                 'App\Http\Controllers\Admin\JobVacancyController@store')->name('admin.job_vacancies.store');
+        Route::get('/{jobVacancy}/edit', 'App\Http\Controllers\Admin\JobVacancyController@edit')->name('admin.job_vacancies.edit');
+        Route::put('/{jobVacancy}',      'App\Http\Controllers\Admin\JobVacancyController@update')->name('admin.job_vacancies.update');
+        Route::delete('/{jobVacancy}',   'App\Http\Controllers\Admin\JobVacancyController@destroy')->name('admin.job_vacancies.destroy');
+    });
 });
