@@ -12,7 +12,7 @@ Frontend    :Blade Templates
              JavaScript
              Authentication: Laravel Breeze/UI
 
-SuperAdmin
+
 Email: admin@mitradata.com
 Password: 12345678
 Role: ADMIN
